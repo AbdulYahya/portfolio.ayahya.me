@@ -1,0 +1,11 @@
+:root {
+  --primary-color-dark: hsl(168, 30%, 45%);
+}
+
+/* html {
+  
+} */
+
+body {
+  background-color: var(--primary-color-dark);
+}
