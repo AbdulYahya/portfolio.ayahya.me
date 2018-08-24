@@ -1,0 +1,12 @@
+query Tipe {
+  Navigation: NavItems(id: "5b7f7af1560b4e0013e4391b") {
+    home
+    _meta {
+      id
+      name
+      updatedAt
+      createdAt
+      published
+    }
+  }
+}

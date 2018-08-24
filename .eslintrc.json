@@ -23,6 +23,7 @@
     "semi": ["error", "always"],
     "no-console": "warn",
     "no-debugger": "warn",
+    "no-undef": "warn",
     "prettier/prettier": "error"
   }
 }

@@ -7,18 +7,32 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
+// const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: { main: './src/index.js' },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
+    path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
   devServer: { contentBase: './dist' },
   module: {
     rules: [
+      {
+        test: /\.tipe$/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'tipe-loader',
+            options: {
+              apiKey: process.env.apiKey,
+              orgKey: process.env.orgKey
+            }
+          }
+        ]
+      },
       {
         test: /\.js$/,
         exclude: '/node_modules/',
@@ -62,9 +76,9 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      // inject: true,
       hash: true,
-      template: './src/index.html',
+      template: 'src/index.html',
       filename: 'index.html'
     }),
     new WebpackMd5Hash(),
@@ -72,5 +86,12 @@ module.exports = {
       configFile: './.stylelintrc.js',
       files: './src/assets/styles/*.css'
     })
+    // Seems to work just fine without this but keeping it here just in case
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     apiKey: JSON.stringify(process.env.apiKey),
+    //     orgKey: JSON.stringify(process.env.orgKey)
+    //   }
+    // })
   ]
 };
