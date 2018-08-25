@@ -10,3 +10,4 @@ const nav = document.getElementsByTagName('nav')[0];
 nav.append(Navigation.home);
 nav.append(Navigation.home);
 nav.append(Navigation.home);
+title.innerHTML += TestDoc.title;

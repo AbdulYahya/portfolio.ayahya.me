@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode build",
-    "build:dev": "NODE_ENV=development webpack --mode developmet",
+    "build:dev": "NODE_ENV=development webpack --mode development",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "start:dev": "NODE_ENV=development env-cmd .env webpack-dev-server --mode development --hot",
     "start": "NODE_ENV=development webpack-dev-server",
     "lint": "eslint src/*.js",
-    "lint:fix": "eslint src/*.js --fix"
+    "lint:fix": "eslint src/*.js --fix",
+    "img": "lepto"
   },
   "keywords": [
     "Portfolio",
@@ -36,6 +37,9 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "html-webpack-plugin": "^3.2.0",
+    "lepto-cli": "^1.2.0",
+    "lepto-resize": "^1.0.1",
+    "lepto-webp": "^1.0.1",
     "mini-css-extract-plugin": "^0.4.2",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^3.0.0",

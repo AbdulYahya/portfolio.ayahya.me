@@ -66,8 +66,10 @@ module.exports = {
       sourceMap: true
     }),
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[contenthash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      chunks: 'all',
+      enforce: true
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -78,7 +80,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       // inject: true,
       hash: true,
-      template: 'src/index.html',
+      template: './src/index.html',
       filename: 'index.html'
     }),
     new WebpackMd5Hash(),
