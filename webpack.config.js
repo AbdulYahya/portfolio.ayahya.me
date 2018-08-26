@@ -55,6 +55,17 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "input": "src/assets/images",
-  "output": "dist/assets/images",
+  "output": "src/assets/optimizedImages",
   "watch": false,
   "gui": false,
   "filters": [
@@ -11,16 +11,13 @@
       ],
       "use": [
         {
-          "name": "lepto-resize",
-          "maxWidth": 1200
-        },
-        {
-          "name": "lepto-webp",
-          "quality": 70
-        },
-        {
           "name": "lepto.jpeg",
-          "quality": 70
+          "quality": 80,
+          "progressive": true
+        }, 
+        {
+          "name": "lepto-resize",
+          "maxWidth": 2000
         }
       ]
     },
@@ -28,14 +25,15 @@
       "glob": "**/*.png",
       "use": [
         {
+          "name": "lepto.png",
+          "quality": "80",
+          "colors": 256
+        },
+        {
           "name": "lepto-resize",
           "retina": [
             2
           ]
-        },
-        {
-          "name": "lepto.png",
-          "quality": "70-80"
         }
       ]
     }
