@@ -1,0 +1,37 @@
+query Tipe {
+  HomePage: PageTemplate(id: "5b84ed4893e4e20013247eb0") {
+    logoGroup {
+      logoText
+      logoImage {
+        id
+        name
+        size
+        url
+      }
+    }
+
+    navItems {
+      ... on NavItems {
+        home
+        about
+        portfolio
+        contact
+      }
+      _meta {
+        id
+        name
+        updatedAt
+        createdAt
+        published
+      }
+    }
+
+    _meta {
+      id
+      name
+      updatedAt
+      createdAt
+      published
+    }
+  }
+}

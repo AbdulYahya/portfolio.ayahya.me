@@ -6,11 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
 // const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
+const smp = new SpeedMeasurePlugin();
 
-module.exports = {
+module.exports = smp.wrap({
   entry: { main: './src/index.js' },
   output: {
     filename: '[name].[hash].js',
@@ -20,6 +22,11 @@ module.exports = {
   devServer: { contentBase: './dist' },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: [{ loader: 'babel-loader?cacheDirectory' }]
+      },
       {
         test: /\.tipe$/,
         enforce: 'pre',
@@ -32,11 +39,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.js$/,
-        exclude: '/node_modules/',
-        use: [{ loader: 'babel-loader' }]
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -89,7 +91,7 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      // inject: true,
+      inject: false,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
@@ -107,4 +109,4 @@ module.exports = {
     //   }
     // })
   ]
-};
+});

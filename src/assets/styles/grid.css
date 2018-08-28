@@ -1,0 +1,49 @@
+/* =================================================================== 
+ *
+ *  DISCON LLC v1.0 Grid Stylesheet
+ *  08-27-2018
+ *  ------------------------------------------------------------------
+ *
+ *  TOC:
+ *  01. Grid Template Areas
+ *  02. Grid Wrapper
+ *  
+ * =================================================================== */
+  
+  header { 
+    grid-area: header;
+    grid-row: 1;
+  }
+
+  main { 
+    grid-area: content;
+    grid-row: 2;
+  }
+  
+  footer { 
+    grid-area: footer;
+    grid-row: 3;
+  }
+
+/* ===================================================================
+ *  02. Grid Wrapper
+ * =================================================================== */
+
+ .grid-wrapper {
+   display: grid;
+   grid-template-areas: 'header'
+   'content'
+   'footer';
+   grid-template-rows: 1fr 3fr 1fr;
+   min-height: 100vh;
+   height: 100%;
+ }
+
+/* ===================================================================
+ *  03. Header
+ * =================================================================== */
+
+ .header {
+   display: grid;
+   grid-template-columns: 1fr 3fr 0.5fr;
+ }

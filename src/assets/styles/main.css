@@ -1,10 +1,42 @@
+/* =================================================================== 
+ *
+ *  DISCON LLC v1.0 Main Stylesheet
+ *  08-21-2018
+ *  ------------------------------------------------------------------
+ *
+ *  TOC:
+ *  01. webfonts, iconfonts, color palette
+ *  02. base style overrides
+ *  03. typography & general theme styles
+ *  04. preloader
+ *  05. forms
+ *  06. buttons
+ *  07. other components
+ *  08. common and reusable styles 
+ *  09. header 
+ *  10. home
+ *  11. about
+ *  12. services
+ *  13. portfolio
+ *  14. testimonials
+ *  15. clients
+ *  16. contact
+ *  17. footer
+ *
+ * =================================================================== */
+
 :root {
   --primary-color-dark: hsl(168, 30%, 45%);
+
 }
 
+/* ===================================================================
+ *  02. Base Style Overrides
+ * =================================================================== */
+
 html {
- box-sizing: border-box;
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
 }
 
 *,
@@ -17,6 +49,37 @@ body {
   background-image: url('../optimizedImages/bg_pattern.png');
   background-size: 240px, auto;
   background-attachment: fixed;
+  font-size: 100%;
+  margin: 0;
   min-height: 100vh;
   min-width: 100vh;
 }
+
+a { text-decoration: none; }
+
+ul, ol, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===================================================================
+ *  02. Header
+ * =================================================================== */
+
+  header > * {
+    align-self: center;
+    justify-self: center;
+  }
+
+  header > nav {
+    justify-self: last baseline;
+  }
+
+ /* ===================================================================
+ *  02. Main Content
+ * =================================================================== */
+
+ /* ===================================================================
+ *  02. Footer
+ * =================================================================== */
