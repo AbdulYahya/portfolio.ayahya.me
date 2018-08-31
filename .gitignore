@@ -5,7 +5,7 @@
 .env.ts
 
 # compiled output
-/dist
+#/dist
 /dist-server
 /tmp
 /out-tsc
