@@ -8,7 +8,7 @@
     "build:dev": "NODE_ENV=development env-cmd .env webpack --mode development",
     "build:prod": "lepto; NODE_ENV=production env-cmd .env webpack --mode production",
     "start:dev": "NODE_ENV=development env-cmd .env webpack-dev-server --mode development --hot",
-    "deploy": "npm run build:dev && git subtree push — prefix dist origin gh-pages",
+    "deploy": "npm run build:dev && git subtree push --prefix dist origin gh-pages",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
     "img": "lepto"
