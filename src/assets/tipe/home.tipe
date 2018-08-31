@@ -13,19 +13,12 @@ query Tipe {
     navItems {
       ... on NavItems {
         home
+        work
         about
-        portfolio
-        contact
-      }
-      _meta {
-        id
-        name
-        updatedAt
-        createdAt
-        published
       }
     }
 
+    pageTitle
     _meta {
       id
       name

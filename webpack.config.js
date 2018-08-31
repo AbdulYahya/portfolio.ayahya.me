@@ -68,6 +68,18 @@ module.exports = smp.wrap({
             }
           }
         ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts/'
+            }
+          }
+        ]
       }
     ]
   },
@@ -91,7 +103,7 @@ module.exports = smp.wrap({
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'

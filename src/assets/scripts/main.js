@@ -1,21 +1,19 @@
 import { HomePage } from '../tipe/home.tipe';
 
-console.log('Your HomePage items:', HomePage.logoGroup.logoText);
-
+const nav = document.getElementsByTagName('nav')[0];
 const logo = document.querySelector('.logo');
 
-if (HomePage.logoGroup.logoImage === null) {
-  logo.innerHTML = HomePage.logoGroup.logoText;
-} else {
-  logo.innerHTML = `<img src="${HomePage.logoGroup.logoImage.url}">`;
+HomePage.pageTitle = document.getElementsByTagName('title')[0];
+
+// prettier-ignore
+for (let navItem in HomePage.navItems) {
+  if (navItem !== 'home') {
+    nav.innerHTML += `<li class="nav__item"><a href="${ HomePage.navItems[navItem] }">${navItem}</a></li>`;
+  } else {
+    if (HomePage.logoGroup.logoImage === null) {
+      logo.innerHTML = `<a href="${HomePage.navItems[navItem]}">${HomePage.logoGroup.logoText}</a>`;
+    } else {
+      logo.innerHTML = `<a href="${HomePage.navItems[navItem]}"><img src="${HomePage.logoGroup.logoImage.url}"></a>`;
+    }
+  }
 }
-
-// const nav = document.getElementsByTagName('nav')[0];
-// // title.innerHTML = TestDoc.title;
-// nav.innerHTML += `
-//   <li class="nav__item"><a href="${Navigation.test}">${Navigation.test}</a></li>`;
-
-// nav[2].innerHTML(`
-//   <li class="nav__item"><a href="${Navigation.home}">Navigation.home</a></li>`);
-
-// title.innerHTML += TestDoc.title;

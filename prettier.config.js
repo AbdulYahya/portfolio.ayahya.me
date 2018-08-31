@@ -3,5 +3,11 @@ module.exports = {
   tabWidth: 2,
   semi: true,
   singleQuote: true,
-  bracketSpacing: true
+  bracketSpacing: true,
+  overrides: [
+    {
+      files: '*.js',
+      options: { parser: 'flow' }
+    }
+  ]
 };
