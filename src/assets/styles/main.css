@@ -77,12 +77,30 @@ ul, ol, li {
 /* ===================================================================
  *  03. typography & general theme styles
  * =================================================================== */
-
- div.logo > a,
- div.logo > a:hover {
+ 
+ a#logo__text {
   color: black;
+  font-size: var(--h5-responsive);
+  font-style: normal;
+  font-weight: 500;
   text-decoration: none;
   text-transform: none;
+ }
+
+ li.nav__item {
+   font-weight: 500;
+ }
+
+ h1#intro__heading {
+   font-size: 1.8em;
+   font-weight: 600;
+   letter-spacing: 0.04em;
+ }
+
+ p#intro__desc {
+   letter-spacing: 0.04em;
+   line-height: 2em;
+   padding-top: 1em;
  }
 
 /* ===================================================================
@@ -96,8 +114,9 @@ header {
 /* ===================================================================
  *  02. Main Content
  * =================================================================== */
-/* section {
-} */
+section#intro__block {
+  margin: 5vw 15vw 5vw 2.05em;
+}
 
 section#sampleProject {
   background-image: linear-gradient(0deg, hsl(168, 30%, 45%, 0.4), hsl(168, 30%, 45%, 0.4)),

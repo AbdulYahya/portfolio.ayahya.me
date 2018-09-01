@@ -9,7 +9,6 @@ query Tipe {
         url
       }
     }
-
     navItems {
       ... on NavItems {
         home
@@ -17,8 +16,15 @@ query Tipe {
         about
       }
     }
-
     pageTitle
+    sectionBlocks {
+      introSection {
+        ... on SectionBlock {
+          heading
+          description
+        }
+      }
+    }
     _meta {
       id
       name
