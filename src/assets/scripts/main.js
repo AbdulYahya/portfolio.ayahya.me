@@ -25,3 +25,11 @@ for (let navItem in HomePage.navItems) {
 
 introHeading.innerHTML = HomePage.sectionBlocks.introSection.heading;
 introDesc.innerHTML = HomePage.sectionBlocks.introSection.description;
+
+let menuToggle = document.querySelector('.hamburger');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('is-active');
+
+  if (nav.className === 'responsive') nav.className = null;
+  else nav.className += 'responsive';
+});

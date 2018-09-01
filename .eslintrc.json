@@ -25,5 +25,13 @@
     "no-debugger": "warn",
     "no-undef": "warn",
     "prettier/prettier": "warn"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/assets/scripts/*.js"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
