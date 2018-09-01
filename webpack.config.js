@@ -16,10 +16,10 @@ module.exports = smp.wrap({
   entry: { main: './src/index.js' },
   output: {
     filename: '[name].[hash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'docs')
   },
   devtool: 'eval-source-map',
-  devServer: { contentBase: './dist' },
+  devServer: { contentBase: './docs' },
   module: {
     rules: [
       {
@@ -84,7 +84,7 @@ module.exports = smp.wrap({
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], {}),
+    new CleanWebpackPlugin(['docs'], {}),
     new UglifyJsPlugin({
       cache: true,
       parallel: true,
