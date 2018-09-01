@@ -30,6 +30,6 @@ let menuToggle = document.querySelector('.hamburger');
 menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('is-active');
 
-  if (nav.className === 'responsive') nav.className = null;
+  if (nav.className === 'responsive') nav.className = '';
   else nav.className += 'responsive';
 });
