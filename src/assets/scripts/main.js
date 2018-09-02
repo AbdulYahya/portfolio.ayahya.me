@@ -18,7 +18,7 @@ for (let navItem in HomePage.navItems) {
     if (HomePage.logoGroup.logoImage === null) {
       logo.innerHTML = `<a id="logo__text" href="${HomePage.navItems[navItem]}">${HomePage.logoGroup.logoText}</a>`;
     } else {
-      logo.innerHTML = `<a href="${HomePage.navItems[navItem]}"><img src="${HomePage.logoGroup.logoImage.url}"></a>`;
+      logo.innerHTML = `<a href="${HomePage.navItems[navItem]}"><img id="logo__img" src="${HomePage.logoGroup.logoImage.url}"></a>`;
     }
   }
 }

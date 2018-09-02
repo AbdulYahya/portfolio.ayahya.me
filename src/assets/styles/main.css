@@ -87,6 +87,12 @@ ul, ol, li {
   text-transform: none;
  }
 
+ img#logo__img {
+  width: 15vh;
+  margin-top: 0.8em;
+  height: 12vh;
+ }
+ 
  li.nav__item {
    font-weight: 500;
  }
