@@ -115,12 +115,12 @@ ul, ol, li {
    padding-top: 1em;
  }
 
- span#failure {
-  color: #f14f4f;
-  position: relative;
-  display: inline-block;
-  transition: color 0.2s ease;
+ span.hl__primary,
+ span.umph {
+  font-weight: 600;
  }
+
+ span.hl__primary { color: var(--primary-color); }
 
  .no-display {
    display: none;
