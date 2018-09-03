@@ -12,6 +12,7 @@ query Tipe {
     navItems {
       ... on NavItems {
         home
+        articles
         work
         about
       }
@@ -23,6 +24,11 @@ query Tipe {
           heading
           description
         }
+      }
+    }
+    footerCopy {
+      ... on Copyright {
+        copyright
       }
     }
     _meta {

@@ -125,6 +125,7 @@ header {
  * =================================================================== */
 section#intro__block {
   margin: 5vw 15vw 5vw 2.05em;
+  max-width: 55vw;
 }
 
 section#sampleProject {
@@ -134,6 +135,18 @@ section#sampleProject {
   background-attachment: fixed;
 }
 
+/* hr#footer__sep {
+  color: #E2E2E2;
+  height: 2px;
+  width: 85%;
+  margin-top: 15vh;
+} */
+p#footer__cpy {
+  color: #E2E2E2;
+  font-size: 0.8em;
+  padding-right: 1vw;
+  text-align: end;
+}
 /* ===================================================================
  *  03. Media Queries
  * =================================================================== */

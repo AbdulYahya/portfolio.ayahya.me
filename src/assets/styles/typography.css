@@ -116,7 +116,7 @@
     --base-min: var(--base-max);
   }
 
-  h1 {
+  /* h1 {
     font-size: var(--h1-size);
     line-height: 1.244em;
     margin: 0.332em auto;
@@ -144,7 +144,7 @@
     font-size: var(--h5-size);
     line-height: 1.658em;
     margin: 0.663em auto;
-  }
+  } */
 
   h6 { font-size: var(--h6-size); }
 
