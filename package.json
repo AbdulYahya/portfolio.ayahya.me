@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode build",
     "build:dev": "NODE_ENV=development env-cmd .env webpack --mode development",
-    "build:prod": "NODE_ENV=production env-cmd .env webpack --mode production",
+    "build:prod": "NODE_ENV=production env-cmd .env webpack --mode production; echo 'portfolio.ayahya.me' >> docs/CNAME",
     "start": "NODE_ENV=development env-cmd .env webpack-dev-server --mode development --hot",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
