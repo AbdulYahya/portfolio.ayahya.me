@@ -13,7 +13,7 @@ $('title').innerHTML = HomePage.pageTitle;
 // prettier-ignore
 for (let navItem in HomePage.navItems) {
   if (navItem !== 'home') {
-    $('nav').innerHTML += `<li class="nav__item"><a href="${ HomePage.navItems[navItem] }">${navItem}</a></li>`;
+    $('nav').innerHTML += `<li class="nav__item"><a href="${ HomePage.navItems[navItem] }" disabled>${navItem}</a></li>`;
   } else {
     if (HomePage.logoGroup.logoImage === null) {
       $('.logo').innerHTML = `<a id="logo__text" href="${HomePage.navItems[navItem]}">${HomePage.logoGroup.logoText}</a>`;
