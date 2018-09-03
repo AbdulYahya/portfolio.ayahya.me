@@ -88,11 +88,11 @@ ul, ol, li {
  }
 
  img#logo__img {
-  width: 15vh;
+  width: 10vh;
   margin-top: 0.8em;
-  height: 12vh;
+  height: 8vh;
  }
- 
+
  li.nav__item {
    font-weight: 500;
  }
