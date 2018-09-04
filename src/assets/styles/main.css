@@ -1,42 +1,25 @@
 /* =================================================================== 
- *
- *  DISCON LLC v1.0 Main Stylesheet
- *  08-21-2018
- *  ------------------------------------------------------------------
- *
- *  TOC:
- *  01. webfonts, iconfonts, color palette
- *  02. base style overrides
- *  03. typography & general theme styles
- *  04. preloader
- *  05. forms
- *  06. buttons
- *  07. other components
- *  08. common and reusable styles 
- *  09. header 
- *  10. home
- *  11. about
- *  12. services
- *  13. portfolio
- *  14. testimonials
- *  15. clients
- *  16. contact
- *  17. footer
- *
- * =================================================================== */
-
+**
+**  DISCON LLC v1.0 Main Stylesheet
+**  08-21-2018
+**  ------------------------------------------------------------------
+**
+**  TOC:
+**  01. root -- webfonts, iconfonts, color palette
+**  02. base style overrides
+**  03. typography & general theme styles
+**  04. media queries
+**
+** =================================================================== */
 :root {
   --primary-color: hsl(168, 30%, 45%);
   --primary-color-dark: hsl(167, 30%, 35%);
 }
 
 /* ===================================================================
- *  02. Base Style Overrides
- * =================================================================== */
-
-html {
-  box-sizing: border-box;
-}
+**  02. Base Style Overrides
+** =================================================================== */
+html { box-sizing: border-box; }
 
 *,
 *:before,
@@ -64,9 +47,7 @@ a:focus {
   text-transform: uppercase;
 }
 
-a:visited {
-  text-decoration: none;
-}
+a:visited { text-decoration: none; }
 
 a[disabled] {
   pointer-events: none;
@@ -81,65 +62,66 @@ ul, ol, li {
 }
 
 /* ===================================================================
- *  03. typography & general theme styles
- * =================================================================== */
- 
- a#logo__text {
+**  03. typography & general theme styles
+** =================================================================== */
+a#logo__text {
   color: black;
   font-size: var(--h5-responsive);
   font-style: normal;
   font-weight: 500;
   text-decoration: none;
   text-transform: none;
- }
-
- img#logo__img {
-  width: 10vh;
-  margin-top: 0.8em;
-  height: 8vh;
- }
-
- li.nav__item {
-   font-weight: 500;
- }
-
- h1#intro__heading {
-   font-size: 1.8em;
-   font-weight: 600;
-   letter-spacing: 0.04em;
- }
-
- p#intro__desc {
-   letter-spacing: 0.04em;
-   line-height: 2em;
-   padding-top: 1em;
- }
-
- span.hl__primary,
- span.umph {
-  font-weight: 600;
- }
-
- span.hl__primary { color: var(--primary-color); }
-
- .no-display {
-   display: none;
- }
-/* ===================================================================
- *  02. Header
- * =================================================================== */
-
-header {
-  margin: 0 1.5em 0 2em;
 }
 
+img#logo__img {
+  height: 2em;
+  margin-top: 0.8em;
+  width: 3em;
+}
+
+li.nav__item {
+  font-weight: 500;
+}
+
+span.hl__primary,
+span.umph { font-weight: 600; }
+
+span.hl__primary { color: var(--primary-color); }
+
+.no-display { display: none; }
+
 /* ===================================================================
- *  02. Main Content
- * =================================================================== */
+**  02. Header
+** =================================================================== */
+header { margin: 0 1.5em 0 2em; }
+
+/* ===================================================================
+**  02. Main Content
+** =================================================================== */
 section#intro__block {
   margin: 5vw 15vw 5vw 2.05em;
   max-width: 70vw;
 }
+section#intro__block h1, 
+section#intro__block p {
+  letter-spacing: 0.04em;
+}
+section#intro__block h1 {
+  font-size: 2.3em;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+section#intro__block p {
+  font-size: 1.4em;
+  line-height: 2.3em;
+}
+section#intro__block p#intro__tl {
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.3;
+  padding: 0;
+}
+section#intro__block p#intro__desc { padding-top: 1em; }
 
 /* section#sampleProject {
   background-image: linear-gradient(0deg, hsl(168, 30%, 45%, 0.4), hsl(168, 30%, 45%, 0.4)),
@@ -148,39 +130,21 @@ section#intro__block {
   background-attachment: fixed;
 } */
 
-/* hr#footer__sep {
-  color: #E2E2E2;
-  height: 2px;
-  width: 85%;
-  margin-top: 15vh;
-} */
 p#footer__cpy {
   color: #E2E2E2;
   font-size: 0.8em;
   padding-right: 2em;
   text-align: end;
 }
-/* ===================================================================
- *  03. Media Queries
- * =================================================================== */
+
+/* ==================================================================
+**  03. Menu Animation
+**    @description Tasty CSS-animated hamburgers
+**    @author Jonathan Suh @jonsuh
+**    @site https://jonsuh.com/hamburgers
+**    @link https://github.com/jonsuh/hamburgers
+** ================================================================== */
 button.hamburger { display: none; }
-@media screen and (max-width: 30em) {
-  button.hamburger { display: block; }
-  div.logo { justify-self: start; }
-  nav { margin: 3vh 0 3vh 0; }
-  nav li { display: none; }
-  nav li.nav__item#mobile__menu { display: block; }
-  nav.responsive li { display: block; }   
-}
-
-
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
@@ -260,3 +224,19 @@ button.hamburger { display: none; }
                 transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+
+/* ==================================================================
+**  03. Media Queries
+** ================================================================== */
+@media screen and (max-width: 30em) {
+  button.hamburger { display: block; }
+  div.logo { justify-self: start; }
+  nav { margin: 3vh 0 3vh 0; }
+  nav li { display: none; }
+  nav li.nav__item#mobile__menu { display: block; }
+  nav.responsive li { display: block; }   
+}
+
+@media screen and (min-width: 50em) {
+  section#intro__block { max-width: 55vw; }
+}

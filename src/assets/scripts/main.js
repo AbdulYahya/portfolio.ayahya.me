@@ -23,7 +23,7 @@ for (let navItem in HomePage.navItems) {
   }
 }
 
-$('#intro__heading').innerHTML = HomePage.sectionBlocks.introSection.heading;
+$('#intro__headline').innerHTML = HomePage.sectionBlocks.introSection.heading;
 $('#intro__desc').innerHTML = HomePage.sectionBlocks.introSection.description;
 
 let menuToggle = document.querySelector('.hamburger');
