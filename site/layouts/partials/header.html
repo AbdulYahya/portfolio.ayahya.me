@@ -1,0 +1,25 @@
+  <header>
+    <a class="logo__link" href="{{ .URL }}"><h1>{{ .Title }}</h1></a>
+
+    <button class="hamburger hamburger--emphatic" type="button"
+            aria-label="Menu" aria-controls="navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <ul id="nav">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+          <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+            <a href="#">{{ .Pre }}<span>{{ .Name }}</span></a>
+          </li>
+        {{ else }}
+          <li>
+            <a href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </header>

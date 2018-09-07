@@ -1,0 +1,23 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+title = "Abdul Yahya"
+
+# RSS, categories and tags disabled for an easy start
+# See configuration options for more details: 
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[menu]
+  [[menu.main]]
+    identifier = "articles"
+    name = "Articles"
+    title = "Article section"
+    url = "/article/"
+    weight = -110
+  [[menu.main]]
+    identifier = "work"
+    name = "Work"
+    title = "Work section"
+    url = "/work/"
+    weight = -100
