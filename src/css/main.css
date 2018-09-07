@@ -4,14 +4,12 @@
 @import "imports/grid.css";
 
 body{
-  /* font-family: "Montserrat", Fallback, sans-serif;
-  font-size: 1em;
-  text-align: center; */
   padding: 1.5em;
 }
 
 a.logo__link { text-decoration: none; }
 a.logo__link > h1 { margin: 0; }
+.logo-svg { width: 35%; height: 35%; }
 
 /* ==================================================================
 **  03. Menu Animation
