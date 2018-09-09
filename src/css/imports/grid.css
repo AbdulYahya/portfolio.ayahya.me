@@ -14,30 +14,64 @@
 **
 ** =================================================================== */
 
-header {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  grid-auto-flow: column;
+div.top__wrapper { 
+  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-
-header > ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 2em;
-  list-style: none;
-  margin: 0;
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center; 
+  justify-content: space-between;
 }
-
+nav { display: flex; }
+nav > ul {
+  flex-flow: row nowrap;
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 100%;
+}
+@media screen and (min-width: 30.01em) {
+  div.top__wrapper { align-items: center; }
+  nav > ul {
+    grid-gap: 2em;
+    padding-right: 0;
+  }
+}
 @media screen and (max-width: 30em) {
-  header {
-    grid-auto-flow: row;
-    grid-template-columns: 1fr;
+  div.top__wrapper {
+    flex-flow: column nowrap;
   }
-  button.hamburger {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  ul#nav { grid-column: 1 / 3; }
 }
+
+@supports (display: grid) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 2em;
+  }
+  @media screen and (max-width: 30em) {
+    header {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
+    }
+    button.hamburger {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    nav > ul { grid-column: 1 / 3; }
+  } 
+}
+
+
+
+
+

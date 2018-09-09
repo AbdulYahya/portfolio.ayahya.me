@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://hugo.ayahya.me"
 languageCode = "en-us"
 languageLang = "en"
 title = "Abdul Yahya"
