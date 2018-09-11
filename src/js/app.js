@@ -11,11 +11,11 @@ menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("is-active");
   if ($("nav").className === "responsive") {
     $("nav").className = "";
-    $("main").style.padding = "5em 0.5em 1.5em 1.5em";
+    $("main").style.padding = "4em 0 0 0";
   }
   else {
     $("nav").className += "responsive";
-    $("main").style.padding = "0.75em 0.5em 1.5em 1.5em";
+    $("main").style.padding = "0.5em 0 0 0";
   }
 });
 
