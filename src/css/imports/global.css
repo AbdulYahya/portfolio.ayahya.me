@@ -14,6 +14,9 @@
   --whitegrey: #e5eff5;
   --pink: #fa3a57;
   --brown: #a3821a;
+
+  --primary-color: hsl(168, 30%, 45%);
+  --primary-color-dark: hsl(167, 30%, 35%);
 }
 
 /* Reset
@@ -105,6 +108,7 @@ video {
 }
 body {
   line-height: 1;
+  padding: 0 1.5em;
 }
 ol,
 ul {
@@ -162,6 +166,15 @@ h1 {
 }
 small {
   font-size: 80%;
+}
+small.h1_tagline {
+  font-weight: initial;
+}
+@media (min-width: 32em) {
+  small.h1_tagline {
+    font-size: 55%;
+
+  }
 }
 sub,
 sup {
@@ -321,6 +334,11 @@ video {
   vertical-align: middle;
 }
 
+svg.logo-svg {
+  width: 6em;
+  height: 3em;
+}
+
 fieldset {
   margin: 0;
   padding: 0;
@@ -354,6 +372,29 @@ ol ul {
 
 ul {
   list-style: disc;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+@media (max-width: 30em) {
+  nav {
+    display: none;
+  }
+
+  nav.responsive {
+    display: block;
+  }
+
+  nav > ul {
+    margin: 3vh 0;
+  }
+
+  nav > ul > * { 
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 ol {
@@ -416,12 +457,16 @@ blockquote cite a {
 }
 
 a {
-  color: color(var(--blue) l(-5%));
+  color: color(var(--primary-color) l(-5%));
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+nav > ul > li > a:hover {
+  text-transform: uppercase;
 }
 
 h1,
@@ -441,6 +486,11 @@ h1 {
   font-size: 5rem;
   font-weight: 700;
 }
+
+h1#intro__headline {
+  line-height: 1;
+}
+
 @media (max-width: 500px) {
   h1 {
       font-size: 2.2rem;
@@ -484,4 +534,134 @@ h6 {
   margin: 1.5em 0 0.5em 0;
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+.site__wrapper {
+  padding-top: 1em;
+  min-height: 100vh;
+  height: 100%;
+}
+
+/* ==================================================================
+**  03. Menu Animation
+**    @description Tasty CSS-animated hamburgers
+**    @author Jonathan Suh @jonsuh
+**    @site https://jonsuh.com/hamburgers
+**    @link https://github.com/jonsuh/hamburgers
+** ================================================================== */
+.hamburger {
+  padding-top: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover { opacity: 0.7; }
+.hamburger-box {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, 
+.hamburger-inner::after {
+  content: '';
+  display: block;
+}
+.hamburger-inner::before { top: -9px; }
+.hamburger-inner::after { bottom: -9px; }
+.hamburger--emphatic { overflow: hidden; }
+.hamburger--emphatic .hamburger-inner { transition: background-color 0.125s 0.175s ease-in; }
+.hamburger--emphatic .hamburger-inner::before {
+  left: 0;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), 
+                top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+}
+.hamburger--emphatic .hamburger-inner::after {
+  top: 9px;
+  right: 0;
+  transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), 
+                top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+}
+.hamburger--emphatic.is-active .hamburger-inner {
+  transition-delay: 0s;
+  transition-timing-function: ease-out;
+  background-color: transparent;
+}
+.hamburger--emphatic.is-active .hamburger-inner::before {
+  left: -60px;
+  top: -60px;
+  transform: translate3d(60px, 60px, 0) rotate(45deg);
+  transition: left 0.125s ease-out, top 0.05s 0.125s linear, 
+                transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.hamburger--emphatic.is-active .hamburger-inner::after {
+  right: -60px;
+  top: -60px;
+  transform: translate3d(-60px, 60px, 0) rotate(-45deg);
+  transition: right 0.125s ease-out, top 0.05s 0.125s linear, 
+                transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburger {
+  display: none;
+  margin-left: auto;
+}
+
+@media (max-width: 30em) {
+  .hamburger {
+    display: block;
+  }
+}
+
+main {
+  padding: 5em 0.5em 1.5em 1.5em;
+}
+
+#intro__block {
+  max-width: 65%;
+}
+
+@media (max-width: 30em) {
+  #intro__block {
+    max-width: 75%;
+  }
+}
+
+#intro__block > p {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 2;
+}
+
+footer > p {
+  color: hsl(15, 10%, 67%);
+  font-size: 0.8em;
+  padding-right: 2em;
+  text-align: end;
 }

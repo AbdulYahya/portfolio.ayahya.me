@@ -1,9 +1,10 @@
 {{ partialCached "head/site_header.html" . }}
-
+  <div class="site__wrapper">
     {{ block "header" . }}{{ partial "header.html" . }}{{end}}
 
     {{ block "main" . }}{{end}}
 
     {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
-{{ partialCached "footer/site_footer.html" . }}
+    
+    {{ partialCached "footer/site_footer.html" . }}
+  </div>

@@ -11,13 +11,13 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 [menu]
   [[menu.main]]
     identifier = "articles"
-    name = "Articles"
+    name = "articles"
     title = "Article section"
     url = "/article/"
     weight = -110
   [[menu.main]]
     identifier = "work"
-    name = "Work"
+    name = "work"
     title = "Work section"
     url = "/work/"
     weight = -100

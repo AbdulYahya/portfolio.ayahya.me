@@ -14,8 +14,8 @@
 **
 ** =================================================================== */
 
-div.top__wrapper { display: flex; }
-header {
+header { display: flex; }
+div.header__top {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -27,7 +27,7 @@ nav > ul {
   min-width: 100%;
 }
 @media screen and (min-width: 30.01em) {
-  div.top__wrapper { align-items: center; }
+  div.header__top { align-items: center; }
   nav { margin-left: auto; }
   nav > ul {
     grid-gap: 2em;
@@ -35,13 +35,19 @@ nav > ul {
   }
 }
 @media screen and (max-width: 30em) {
-  div.top__wrapper { flex-flow: column nowrap; }
-  nav > ul > * { margin-left: auto; margin-right: auto; }
+  header { flex-flow: column nowrap; }
+  
 }
 
 @supports (display: grid) {
+  .site__wrapper {
+    display: grid;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: max-content auto;
+  }
   header {
     display: grid;
+    grid-area: header;
     grid-template-columns: repeat(2, max-content);
     grid-auto-flow: column;
     justify-content: space-between;
@@ -51,6 +57,12 @@ nav > ul {
     display: grid;
     grid-auto-flow: column;
     grid-gap: 2em;
+  }
+  main { grid-area: main; }
+  footer {
+    grid-area: footer;
+    display: grid;
+    align-self: end;
   }
   @media screen and (max-width: 30em) {
     header {
@@ -64,8 +76,3 @@ nav > ul {
     nav > ul { grid-column: 1 / 3; }
   } 
 }
-
-
-
-
-
