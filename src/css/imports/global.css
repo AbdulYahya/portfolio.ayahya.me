@@ -493,6 +493,12 @@ h1 {
   }
 }
 
+@media (min-width: 45em) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
 h2 {
   margin: 1.5em 0 0.5em 0;
   font-size: 2rem;
