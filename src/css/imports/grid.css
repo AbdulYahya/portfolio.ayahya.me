@@ -14,7 +14,11 @@
 **
 ** =================================================================== */
 
-header { display: flex; }
+header { 
+  display: flex;
+  margin: 0 1.5em;
+}
+
 div.header__top {
   display: flex;
   flex-direction: row;
@@ -36,7 +40,6 @@ nav > ul {
 }
 @media screen and (max-width: 30em) {
   header { flex-flow: column nowrap; }
-  
 }
 
 @supports (display: grid) {
@@ -63,6 +66,7 @@ nav > ul {
     grid-area: footer;
     display: grid;
     align-self: end;
+    text-align: right;
   }
   @media screen and (max-width: 30em) {
     header {

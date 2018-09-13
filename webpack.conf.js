@@ -10,10 +10,14 @@ export default {
       },
       {test: /\.json$/, loader: "json-loader"},
       {
-        loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true}
+        use: {
+          loader: "babel-loader?cacheDirectory=true",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       }
     ]
   },
