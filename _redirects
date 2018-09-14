@@ -1,2 +1,2 @@
 # Redirect default Netlify subdomain to primary domain
-https://ay-portfolio.netlify.com/* https://hugo.ayahya.me/:splat 301!
+https://ay-portfolio.netlify.com https://hugo.ayahya.me/:splat 301!
