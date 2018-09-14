@@ -1,12 +1,12 @@
 /* Variables
 /* ---------------------------------------------------------- */
-@custom-media --viewport-smaller (width <= 20rem);
-@custom-media --vp-smaller-small (20rem <= width < 25rem);
-@custom-media --vp-smaller-medium (25rem <= width <= 45rem);
-@custom-media --viewport-small (width <= 31.25rem);
-@custom-media --viewport-bt-small (31.25rem <= width < 45rem);
-@custom-media --viewport-medium (width <= 45rem);
-@custom-media --viewport-bt-medium (width > 45rem);
+@custom-media --vp-smaller (width <= 20em);
+@custom-media --vp-smaller-small (20em <= width < 25rem);
+@custom-media --vp-smaller-medium (25em <= width <= 45em);
+@custom-media --viewport-small (width <= 31.25em);
+@custom-media --viewport-bt-small (31.25em <= width < 45em);
+@custom-media --viewport-medium (width <= 45em);
+@custom-media --viewport-bt-medium (width > 45em);
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
@@ -170,29 +170,37 @@ h1 {
   margin: 0.67em 0;
   font-size: 2em;
 }
+h1#intro__headline {
+  text-rendering: optimizeLegibility;
+}
+span.h1_headline {
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+}
 small {
   font-size: 70%;
 }
 small.h1_tagline {
+  font-style: italic;
   position: relative;
   color: var(--midgrey);
   font-weight: 300;
-  opacity: 0.6;
-  top: -3.3rem;
+  opacity: 0.4;
+  top: -3.2rem;
   z-index: -1;
 }
-@media (--viewport-smaller)  {
+@media (--vp-smaller)  {
   small.h1_tagline {
     font-size: 65%;
     top: -1.7rem;
   }
 }
-@media (--vp-smaller-small) {
+@media (min-width: 20em) and (max-width: 25em) {
   small.h1_tagline {
-    top: -1.7rem;
+    font-size: 79%;
+    top: -1.5rem;
   }
 }
-@media (--vp-smaller-medium) {
+@media (min-width: 25em) and (max-width: 45em) {
   small.h1_tagline {
     top: -2.2rem;
   }
@@ -671,35 +679,32 @@ main {
   margin-left: 1.5em;
 }
 
-@media (max-width: 30em) {
-  #intro__block {
-    max-width: 85%;
-  }
+p#intro__desc {
+  color: var(--midgrey);
 }
-
-@media (min-width: 31.313em) {
-  p#intro__desc {
-    max-width: 80%;
-  }
-}
-
 @media (min-width: 45rem) {
   p#intro__desc {
     font-size: 1.8rem;
-    max-width: 70%;
   }
 }
 
 .quote_wrapper {
+  margin-left: -1.5rem;
   margin-top: 10vh;
+  text-rendering: optimizeLegibility;
 }
 
 small.loading {
+  font-size: 80%;
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
+  margin-top: 1rem;
   opacity: 0.4;
+  text-align: center;
 }
 
 .quote_wrapper > p {
-  font-weight: 300;
+  font-weight: 400;
   line-height: calc(var(--font-size) * 1.8);
 }
 
