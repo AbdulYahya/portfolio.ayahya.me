@@ -1,6 +1,20 @@
+# [settings]
+
 [build]
   command = "npm run build"
   publish = "dist"
 
 [context.deploy-preview]
   command = "npm run build-preview"
+
+[[redirects]]
+  from = "https://ay-portfolio.netlify.com"
+  to = "https://hugo.ayahya.me:splat"
+  status = 301
+  force = true
+   
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=300; includeSubDomains; preload"
+    
