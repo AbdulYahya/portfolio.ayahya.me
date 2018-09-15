@@ -9,7 +9,7 @@
 
 [[redirects]]
   from = "https://ay-portfolio.netlify.com"
-  to = "https://hugo.ayahya.me:splat"
+  to = "https://ayahya.me:splat"
   status = 301
   force = true
    
