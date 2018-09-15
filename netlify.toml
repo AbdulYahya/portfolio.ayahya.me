@@ -1,15 +1,16 @@
 # [settings]
 
 [build]
-  command = "npm run build"
+  base = "site"
   publish = "dist"
+  command = "npm run build"
 
 [context.deploy-preview]
   command = "npm run build-preview"
 
 [[redirects]]
   from = "https://ay-portfolio.netlify.com"
-  to = "https://ayahya.me:splat"
+  to = "https://ayahya.me/:splat"
   status = 301
   force = true
    
