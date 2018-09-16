@@ -1,6 +1,5 @@
 import webpack from "webpack";
 import path from "path";
-import Dotenv from "dotenv-webpack";
 
 export default {
   module: {
@@ -24,11 +23,6 @@ export default {
   },
 
   plugins: [
-    new Dotenv({
-      safe: false,
-      systemvars: true,
-      silent: true
-    }),
     new webpack.ProvidePlugin({
       "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
     })
