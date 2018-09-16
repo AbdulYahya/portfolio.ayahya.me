@@ -1,4 +1,7 @@
-{{ define "main" }}
+{{ partialCached "header/site_header.html" . }}
+  <div class="site__wrapper">
+    {{ block "header" . }}{{ partial "header.html" . }}{{end}}
+
   <ul class="articles-testing">
       <!-- Ranges through content/blog/*.md -->
       {{ range (.Paginator 5).Pages }}  
@@ -9,12 +12,15 @@
           <div class="post-summary">
               {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
           </div>
-  
+
           <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
       </li>
-  
+
       {{ end }}
   </ul>
   
   {{ partial "pagination.html" . }}
-{{ end }}
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  </div>
+
+{{ partialCached "footer/site_footer.html" . }}
