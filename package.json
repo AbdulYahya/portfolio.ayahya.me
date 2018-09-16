@@ -15,7 +15,8 @@
   "author": "Abdullah Yahya",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "dotenv-webpack": "^1.5.7"
   },
   "resolutions": {
     "natives": "1.1.3"
