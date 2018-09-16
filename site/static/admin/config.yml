@@ -10,16 +10,24 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 display_url: https://ayahya.me
 
+
 collections:
   - name: "article" # Used in routes, e.g., /admin/collections/blog
     label: "Article" # Used in the UI
     folder: "site/content/article" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: toml-frontmatter
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "type", widget: "hidden", default: "article"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - {label: "Table of Contents", name: "toc", widget: "boolean", default: false}
+      - {label: "Categories", name: "categories", widget: list, allow_add: true, default: [""], required: false}
+      - {label: "Tags", name: "tags", widget: list, allow_add: true, default: [""], required: false}
+      - {label: "Gallery", name: "galleryImages", widget: list, field: - {label: Image, name: image, widget: image}}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 

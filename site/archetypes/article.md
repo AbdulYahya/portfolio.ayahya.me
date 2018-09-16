@@ -7,8 +7,6 @@ draft = true
 toc = false
 categories = []
 tags = []
-images = [
-  "https://source.unsplash.com/collection/983219/1600x900"
-] # overrides site-wide open graph image
-thumbnail = "https://source.unsplash.com/collection/983219/1600x900"
+galleryImages = [""] # overrides site-wide open graph image
+featuredImage = ""
 +++
