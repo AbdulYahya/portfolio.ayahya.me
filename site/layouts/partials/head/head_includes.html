@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="css/main.css">
+
+{{ if eq (relURL .URL) ("/" | safeHTML) }}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+{{ end }}
