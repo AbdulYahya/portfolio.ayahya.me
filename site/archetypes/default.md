@@ -1,6 +1,5 @@
 +++ 
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
+title = "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }} 
-description = "This text is displayed in search result listings."
-draft = true
+description = ""
 +++
