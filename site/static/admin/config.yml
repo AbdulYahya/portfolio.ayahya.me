@@ -27,9 +27,9 @@ collections:
       - {label: "Table of Contents", name: "toc", widget: "boolean", default: false}
       - {label: "Categories", name: "categories", widget: list, allow_add: true, default: [""], required: false}
       - {label: "Tags", name: "tags", widget: list, allow_add: true, default: [""], required: false}
-      - label: "Gallery",
-        name: "galleryImages",
-        widget: list,
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: list
         field: 
           - {label: Image, name: image, widget: image}
       - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
