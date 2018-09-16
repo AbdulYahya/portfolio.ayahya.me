@@ -7,6 +7,7 @@ draft = true
 toc = false
 categories = []
 tags = []
-galleryImages = [""] # overrides site-wide open graph image
+galleryImages = [""]
 featuredImage = ""
 +++
+Yuuup
