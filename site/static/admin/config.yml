@@ -31,7 +31,7 @@ collections:
         name: "galleryImages"
         widget: list
         field: 
-          - {label: "Image", name: "image", widget: image}
+          - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
