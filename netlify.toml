@@ -1,9 +1,9 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "node ./scripts/create-env.js && npm run build"
 
 [context.deploy-preview]
-  command = "node ./scripts/create-env.js && npm run build-preview"
+  command = "npm run build-preview"
 
 [[redirects]]
   from = "https://ay-portfolio.netlify.com"
