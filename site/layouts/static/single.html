@@ -1,5 +1,12 @@
-{{ define "main" }}
-<section id="main">
-  {{ .Content }}
-</section>
-{{ end }}
+  {{ partial "header/site_header" . }}
+  <div class="site__wrapper">
+    {{ block "header" . }}{{ partial "header" . }}{{end}}
+
+    <main>
+      {{ .Content }}
+    </main>
+    
+    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  </div>
+
+  {{ partial "footer/site_footer" . }}

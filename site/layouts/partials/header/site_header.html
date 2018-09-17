@@ -1,13 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="{{ $.Site.Language.Lang }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
   <head>
-    {{ partial "head/metadata.html" . }}
-
-    <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
-    <title> {{ .Title }} : Welcome </title>
-    <link rel="canonical" href="{{ .Permalink }}">
-    {{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
-
+    {{ partial "head/metadata" . }}    
     {{ partial "head/head_includes.html" . }}
+    <title>
+      {{ if .IsHome }}
+        {{ .Site.Title }}
+      {{ else }}
+        {{ .Title }}
+      {{ end }}
+    </title>
   </head>
   <body lang="{{ $.Site.Language.Lang }}">

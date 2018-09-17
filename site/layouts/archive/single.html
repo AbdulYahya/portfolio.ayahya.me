@@ -1,14 +1,23 @@
-{{ define "main" }}
-  {{ range where .Site.Pages "Type" "article" }}  
+{{ partial "header/site_header" . }}
+<div class="site__wrapper">
+  {{ block "header" . }}{{ partial "header" . }}{{end}}
+
+  <main>
+    {{ range where .Site.Pages "Type" "article" }}  
     <li class="post">
-        <a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a>
-        <span class="post-meta"><time>{{ .Date.Format "January 2, 2006" }}</time> {{ if .Params.External }} — <span class="post-host">for {{ .Params.External.Host }}</span> {{ end }}</span>
-                            
-        <div class="post-summary">
-            {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
-        </div>
-    
-        <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
+      <a class="post-title" href="{{.RelPermalink}}">{{ .Title }}</a>
+      <span class="post-meta"><time>{{ .Date.Format "January 2, 2006" }}</time> {{ if .Params.External }} — <span class="post-host">for {{ .Params.External.Host }}</span> {{ end }}</span>
+                              
+      <div class="post-summary">
+          {{ .Summary }} <!-- automatically takes the first paragraph in the .md article -->
+      </div>
+      
+      <p><small><a href="{{.RelPermalink}}" class="read-more-link">Read more ››</a></small></p>
     </li>
-  {{ end }}
-{{ end }}
+    {{ end }}
+  </main>
+  
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+</div>
+
+{{ partial "footer/site_footer" . }}

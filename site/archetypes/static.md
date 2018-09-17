@@ -1,7 +1,7 @@
 +++
 type = "static"
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
+title = "{{ replace .Name "-" " " | title }}"
 description = ""
 menu = "main"
-weight = ""
+weight = "1"
 +++

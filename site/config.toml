@@ -1,7 +1,19 @@
-baseurl = "https://ayahya.me"
+baseURL = "https://ayahya.me"
 languageCode = "en-us"
 languageLang = "en"
 title = "Abdul Yahya"
+
+paginate = 12
+enableEmoji = true
+enableRobotsTXT = true
+googleAnalytics = ""
+
+preserveTaxonomyNames = true
+
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
@@ -21,3 +33,33 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     title = "Work section"
     url = "/work/"
     weight = -100
+
+[params]
+  # Color theme.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
+  color_theme = "default"
+
+  # Font style.
+  #   Choose from `default`, `classic`, or `playfair`.
+  font = "default"
+
+  # Your details.
+  name = "Abdul Yahya"
+  role = "Web Developer & Solutions Architect"
+
+  # Organizations/Affiliations.
+  #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+  organizations = [ 
+    { name = "LASCON LLC", url = "https://lascon.co" },
+    { name = "Halo Automotive", url = "https://halocars.us" }
+  ]
+
+  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
+  # avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  email = "me.ayahya@gmail.com"
+  # address = "Building 1 Room 1, Stanford University, California, 90210, USA"
+  # office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  # phone = "888 888 88 88"
+  twitter = "_abdulyahya"
+  # skype = "echo123"
+  # telegram = ""

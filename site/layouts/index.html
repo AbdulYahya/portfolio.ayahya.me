@@ -1,25 +1,30 @@
-{{ define "main" }}
+  {{ partial "header/site_header.html" . }}
+  <div class="site__wrapper">
+    {{ block "header" . }}{{ partial "header.html" . }}{{end}}
 
-  <main>
-    <section class="section__block" id="intro__block">
-      <h1 id="intro__headline">
-        <span class="h1_headline">Hello, I'm Abdul!</span>
-        <br />
-        <small class="h1_tagline">Developer & Solutions Architect</small>
-      </h1>
-      <div class="quote_wrapper">
-        <div class="load__spinner">
-          <div class="flower-spinner">
-            <div class="dots-container">
-              <div class="bigger-dot">
-                <div class="smaller-dot"></div>
+    <main>
+        <section class="section__block" id="intro__block">
+          <h1 id="intro__headline">
+            <span class="h1_headline">Hello, I'm Abdul!</span>
+            <br />
+            <small class="h1_tagline">Developer & Solutions Architect</small>
+          </h1>
+          <div class="quote_wrapper">
+            <div class="load__spinner">
+              <div class="flower-spinner">
+                <div class="dots-container">
+                  <div class="bigger-dot">
+                    <div class="smaller-dot"></div>
+                  </div>
+                </div>
               </div>
+              <small class="loading">Site under construction. <br />While you wait, here's a quote.</small>
             </div>
           </div>
-          <small class="loading">Site under construction. <br />While you wait, here's a quote.</small>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
+    </main>
+    
+    {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  </div>
 
-{{ end }}
+  {{ partial "footer/site_footer" . }}

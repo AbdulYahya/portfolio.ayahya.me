@@ -1,3 +1,12 @@
-{{ define "main" }}
-  {{ .Content }}
-{{ end }}
+{{ partial "header/site_header" . }}
+<div class="site__wrapper">
+  {{ block "header" . }}{{ partial "header.html" . }}{{end}}
+
+  <main>
+    {{ .Content }}
+  </main>
+  
+  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+</div>
+
+{{ partial "footer/site_footer" . }}

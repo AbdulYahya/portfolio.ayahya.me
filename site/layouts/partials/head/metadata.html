@@ -1,2 +1,31 @@
-<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{ .Hugo.Generator }}
+{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+
+{{ $scr := .Scratch }}
+{{/* Generate page description. */}}
+{{ $scr.Set "description" .Site.Params.role }}
+{{ if .Params.abstract }}
+  {{ $scr.Set "description" .Params.abstract }}
+{{ else if .Params.summary }}
+  {{ $scr.Set "description" .Params.summary }}
+{{ else if .IsPage }}
+  {{ $scr.Set "description" .Summary }}
+{{ end }}
+<meta name="description" content="{{ $scr.Get "description" }}">
+<link rel="canonical" href="{{ .Permalink }}" />
+<meta property="twitter:card" content="summary_large_image">
+{{ with .Site.Params.twitter }}
+<meta property="twitter:site" content="@{{ . }}">
+<meta property="twitter:creator" content="@{{ . }}">
+{{ end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+<meta property="og:description" content="{{ $scr.Get "description" }}">
+{{- with .Params.header.image }}<meta property="og:image" content="{{ printf "img/%s" . | absURL }}">{{end}}
+<meta property="og:locale" content="{{ .Site.LanguageCode | default "en-us" }}">
+<base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
+{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
