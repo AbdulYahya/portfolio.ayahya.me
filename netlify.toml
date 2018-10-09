@@ -10,7 +10,12 @@
   to = "https://ayahya.me"
   status = 301
   force = true
-   
+[[redirects]]
+  from = "https://portfolio.ayahya.me"
+  to = "https://ayahya.me"
+  status = 301
+  force = true
+  
 [[headers]]
   for = "/*"
   [headers.values]
