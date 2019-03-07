@@ -10,7 +10,7 @@
     {
       "packagePatterns": ["^eslint"],
       "groupName": "eslint"
-    },
+    }
   ],
   "labels": ["renovate"],
   "prHourlyLimit": 4,
