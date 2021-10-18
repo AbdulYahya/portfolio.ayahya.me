@@ -40,7 +40,7 @@
     "lepto-cli": "1.2.0",
     "lepto-resize": "1.0.1",
     "mini-css-extract-plugin": "0.4.2",
-    "optimize-css-assets-webpack-plugin": "5.0.0",
+    "optimize-css-assets-webpack-plugin": "5.0.8",
     "postcss-loader": "3.0.0",
     "prettier": "1.14.2",
     "speed-measure-webpack-plugin": "1.2.2",
